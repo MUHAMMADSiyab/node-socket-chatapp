@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Socket.IO Chat Example</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <style>
+        #chat-messages-area::-webkit-scrollbar {
+            width: 6px;
+        }
+        #chat-messages-area::-webkit-scrollbar-thumb {
+            background: grey;
+        }
+        #chat-messages-area, #chat-form {
+            display: none;
+        }
+        #chat-messages-area {
+            height: 390px;
+            padding: 8px;
+            overflow-y: scroll;
+        }
+        #chat-messages-area p {
+            padding-left: 10px;
+        }
+        #chat-messages-area p strong {
+            color: crimson;
+        }
+        #chat-messages-area small {
+            display: block;
+            margin-bottom: 7px
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 10px">
+        <h3>Socket.IO Chat Example</h3>
+        <hr>
+        <form id="user-form">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="userName" placeholder="Enter your name"  autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success btn-sm" value="Start Chat" />
+            </div>
+        </form>
+        <form id="chat-form">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-sm" placeholder="Enter your message" id="message" autocomplete="off"/>
+            </div>    
+            <div class="form-group">
+                <input type="submit" class="btn btn-dark btn-sm btn-block" value="SEND" id="send"/>
+            </div>  
+        </form>
+        <div class="card bg-light" id="chat-messages-area">
+            <div class="typing"></div>
+            <div class="chat"></div>
+        </div>
+    </div>
+    
+    <script src="js/Chat.js"></script>
+</body>
+</html>
