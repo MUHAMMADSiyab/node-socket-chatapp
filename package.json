@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e js, ejs, html"
+    "start": "node index.js"
   },
   "author": "MUHAMMAD Siyab",
   "license": "ISC",
