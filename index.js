@@ -7,7 +7,7 @@ var fs = require('fs');
 //var db = require('./connection');
 
 // Setting port
-app.set('port', process.env.PORT | 4000);
+app.set('port', process.env.PORT || 4000);
 var port = app.get('port');
 
 // Setting view path
