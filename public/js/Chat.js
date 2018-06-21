@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var socket = io.connect('localhost:4000');
+    var socket = io.connect('https://node-socket-chatapp.herokuapp.com/');
     var users = [];
     // User 
     $('#user-form').submit(function(e){
