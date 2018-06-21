@@ -6,6 +6,10 @@ var socket = require('socket.io');
 var fs = require('fs');
 //var db = require('./connection');
 
+// Setting port
+app.set('port', process.env.PORT | 4000);
+var port = app.get('port');
+
 // Setting view path
 app.use(express.static('public'));
 
@@ -14,8 +18,8 @@ app.get('/', (req, res) => {
     res.sendFile('index');
 });
 
-var server = app.listen(4000, function(){
-    console.log('Server listening on port 4000');
+var server = app.listen(port, function(){
+    console.log('Server listening on port ' + port);
 });
 
 // Socket.IO
@@ -38,10 +42,10 @@ io.on('connection', function(socket){
 //     });
 
     // Listening to `user entered` event
-    socket.on('user entered', function(data){
-        // Emitting `user entered` event
-        io.emit('user entered', chatData);
-    });
+//     socket.on('user entered', function(data){
+//         // Emitting `user entered` event
+//         io.emit('user entered', chatData);
+//     });
 
     // Listening to `chat` event
     socket.on('chat', function(data){
