@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+    
+    console.log(location.port);
+    console.log(location.host);
     var socket = io.connect('https://node-socket-chatapp.herokuapp.com/');
     var users = [];
     // User 
