@@ -15,11 +15,11 @@ $(document).ready(function(){
     });
 
     // On user entry
-    socket.on('user entered', function(data){
-        data.forEach(function(item){
-            $('#chat-messages-area .chat').prepend('<p><strong>' + item.sender + '</strong>: ' + item.message + '</p>');
-        });
-    })
+//     socket.on('user entered', function(data){
+//         data.forEach(function(item){
+//             $('#chat-messages-area .chat').prepend('<p><strong>' + item.sender + '</strong>: ' + item.message + '</p>');
+//         });
+//     })
 
     // Chat
     $('#chat-form').submit(function(e){
