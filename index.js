@@ -30,7 +30,7 @@ io.on('connection', function(socket){
 
     var chatData = [];
 
-    let query = 'SELECT * FROM `chat_data`';
+    let query = 'SELECT * FROM `your_table_name`';
     db.query(query, function(err, data){
         if (err) {
             console.log('Error reading data from DB');
@@ -51,7 +51,7 @@ io.on('connection', function(socket){
     socket.on('chat', function(data){
 
         // Saving chat data to database
-        let q = 'INSERT INTO `chat_data` (`id`, `sender`, `message`) VALUES (null, "' + data.username +  '","' + data.msg + '")';
+        let q = 'INSERT INTO `your_table_name` (`id`, `sender`, `message`) VALUES (null, "' + data.username +  '","' + data.msg + '")';
         db.query(q, function(err) {
             if (err) {
                 console.log('Error inserting data');
